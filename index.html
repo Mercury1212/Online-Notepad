@@ -1053,7 +1053,19 @@
           handleFileImport(file);
         }
       });
-    }
+    
+      
+      // ✅ Ctrl+Click on header opens another instance in a new tab
+      const header = document.querySelector("header h1");
+      if (header) {
+        header.style.cursor = "pointer";
+        header.addEventListener("click", (e) => {
+          if (e.ctrlKey) {
+            window.open(window.location.href, "_blank");
+          }
+        });
+      }
+}
   })();
   </script>
 </body>
